@@ -9,15 +9,15 @@ dotenv.config();
 //Set app
 const app = express();
 
-//Using routes (all routes will start with posts)
-
-app.use('/posts', postRoutes);
-
 //Middlewares
 
 app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
+
+//Using routes (all routes will start with posts)
+
+app.use('/posts', postRoutes);
 
 //MongoDB
 
