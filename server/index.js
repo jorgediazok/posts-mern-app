@@ -19,6 +19,11 @@ app.use(cors());
 
 app.use('/posts', postRoutes);
 
+//Heroku
+app.get('/', (req, res) => {
+  res.send('Hello to Moments Api');
+});
+
 //MongoDB
 
 mongoose
