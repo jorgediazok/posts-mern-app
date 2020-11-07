@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { TextField, Button, Typography, Paper } from '@material-ui/core';
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
-
 import useStyles from './styles';
-import { createPost } from '../../actions/posts';
+import { createPost, updatePost } from '../../actions/posts';
 
-function Form() {
+function Form({ currentId, setCurrentId }) {
   const [postData, setPostData] = useState({
     creator: '',
     title: '',
@@ -15,16 +15,30 @@ function Form() {
     selectedFile: '',
   });
 
-  const dispatch = useDispatch();
+  const post = useSelector((state) =>
+    currentId ? state.posts.find((p) => p._id === currentId) : null
+  );
 
   //Styles
   const classes = useStyles();
+  const dispatch = useDispatch();
 
   //Handle
 
+  useEffect(() => {
+    if (post) {
+      setPostData(post);
+    }
+  }, [post]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(createPost(postData));
+
+    if (currentId) {
+      dispatch(updatePost(currentId, postData));
+    } else {
+      dispatch(createPost(postData));
+    }
   };
 
   const clear = () => {};
@@ -36,7 +50,9 @@ function Form() {
         noValidate
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}>
-        <Typography variant="h6">Creating a Memory</Typography>
+        <Typography variant="h6">
+          ${currentId ? 'Editing' : 'Creating'} a Memory
+        </Typography>
         <TextField
           name="creator"
           variant="outlined"
