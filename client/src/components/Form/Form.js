@@ -62,7 +62,7 @@ function Form({ currentId, setCurrentId }) {
         className={`${classes.root} ${classes.form}`}
         onSubmit={handleSubmit}>
         <Typography variant="h6">
-          {currentId ? 'Editing' : 'Creating'} a Memory
+          {currentId ? 'Editing' : 'Creating'} a Moment
         </Typography>
         <TextField
           name="creator"
