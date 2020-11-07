@@ -16,6 +16,7 @@ function Form({ currentId, setCurrentId }) {
   });
 
   const post = useSelector((state) =>
+    // @ts-ignore
     currentId ? state.posts.find((p) => p._id === currentId) : null
   );
 
@@ -97,7 +98,10 @@ function Form({ currentId, setCurrentId }) {
           label="Tags"
           fullWidth
           value={postData.tags}
-          onChange={(e) => setPostData({ ...postData, tags: e.target.value })}
+          onChange={(e) =>
+            // @ts-ignore
+            setPostData({ ...postData, tags: e.target.value.split(',') })
+          }
         />
         <div className={classes.fileInput}>
           <FileBase
