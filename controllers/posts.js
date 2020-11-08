@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const PostMessage = require('../models/postMessage');
 
-export const getPosts = async (req, res) => {
+exports.getPosts = async (req, res) => {
   try {
     const postMessages = await PostMessage.find();
     res.status(200).json(postMessages);
@@ -10,7 +10,7 @@ export const getPosts = async (req, res) => {
   }
 };
 
-export const createPost = async (req, res) => {
+exports.createPost = async (req, res) => {
   const post = req.body;
   const newPost = new PostMessage(post);
   try {
@@ -21,7 +21,7 @@ export const createPost = async (req, res) => {
   }
 };
 
-export const updatePost = async (req, res) => {
+exports.updatePost = async (req, res) => {
   const { id: _id } = req.params;
   const post = req.body;
 
@@ -40,7 +40,7 @@ export const updatePost = async (req, res) => {
   res.json(updatedPost);
 };
 
-export const deletePost = async (req, res) => {
+exports.deletePost = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
@@ -52,7 +52,7 @@ export const deletePost = async (req, res) => {
   res.json({ message: 'Post deleted succesfully' });
 };
 
-export const likePost = async (req, res) => {
+exports.likePost = async (req, res) => {
   const { id } = req.params;
 
   if (!mongoose.Types.ObjectId.isValid(id)) {
