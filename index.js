@@ -5,7 +5,7 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
 import path from 'path';
-const serveStatic = require('serve-static');
+import serveStatic from 'serve-static';
 const __dirname = path.resolve();
 const pathJoin = path.join(__dirname, '/client/');
 
