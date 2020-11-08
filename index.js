@@ -3,7 +3,6 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const serveStatic = require('serve-static');
 
 require('dotenv').config();
 
@@ -19,7 +18,10 @@ const app = express();
 app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
-app.use(serveStatic(pathJoin));
+app.use(express.static('client/build/'));
+app.get('/', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+});
 
 //Using routes (all routes will start with posts)
 
