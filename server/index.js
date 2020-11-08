@@ -6,6 +6,8 @@ import dotenv from 'dotenv';
 import postRoutes from './routes/posts.js';
 import path from 'path';
 import serveStatic from 'serve-static';
+const __dirname = path.resolve();
+
 dotenv.config();
 
 //Set app
@@ -16,7 +18,7 @@ const app = express();
 app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
-app.use(serveStatic(path.resolve(__dirname, '/client')));
+app.use(serveStatic(path.join(__dirname, '/client')));
 
 //Using routes (all routes will start with posts)
 
