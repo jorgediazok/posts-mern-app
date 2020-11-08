@@ -1,15 +1,15 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js';
-import path from 'path';
-import serveStatic from 'serve-static';
-const __dirname = path.resolve();
-const pathJoin = path.join(__dirname, '/client/');
+const express = require('express');
+const bodyParser = require('body-parser');
+const mongoose = require('mongoose');
+const cors = require('cors');
+const path = require('path');
+const serveStatic = require('serve-static');
 
-dotenv.config();
+require('dotenv').config();
+
+import postRoutes from './routes/posts.js';
+
+const pathJoin = path.join(__dirname, '/client/');
 
 //Set app
 const app = express();
