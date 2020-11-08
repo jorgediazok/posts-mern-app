@@ -25,11 +25,6 @@ console.log(__dirname);
 
 app.use('/posts', postRoutes);
 
-//Heroku
-app.get('/', (req, res) => {
-  res.send('Hello to Moments Api');
-});
-
 //MongoDB
 
 mongoose
