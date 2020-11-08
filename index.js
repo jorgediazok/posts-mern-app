@@ -7,7 +7,7 @@ import postRoutes from './routes/posts.js';
 import path from 'path';
 import serveStatic from 'serve-static';
 const __dirname = path.resolve();
-const pathJoin = path.join(__dirname, '/server', '/client');
+const pathJoin = path.join(__dirname, '/client');
 
 dotenv.config();
 
