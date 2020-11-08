@@ -24,7 +24,7 @@ console.log(pathJoin);
 
 //Using routes (all routes will start with posts)
 
-app.use('/posts', postRoutes);
+app.use('/api', postRoutes);
 
 //MongoDB
 
