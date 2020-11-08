@@ -1,13 +1,13 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import mongoose from 'mongoose';
-import cors from 'cors';
-import dotenv from 'dotenv';
-import postRoutes from './routes/posts.js';
-import path from 'path';
-import serveStatic from 'serve-static';
+import express from "express";
+import bodyParser from "body-parser";
+import mongoose from "mongoose";
+import cors from "cors";
+import dotenv from "dotenv";
+import postRoutes from "./routes/posts.js";
+import path from "path";
+import serveStatic from "serve-static";
 const __dirname = path.resolve();
-const pathJoin = path.join(__dirname, '/client/');
+const pathJoin = path.join(__dirname, "/client/");
 
 dotenv.config();
 
@@ -16,15 +16,15 @@ const app = express();
 
 //Middlewares
 
-app.use(bodyParser.json({ limit: '30mb' }));
-app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
+app.use(bodyParser.json({ limit: "30mb" }));
+app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-app.use(serveStatic(pathJoin));
+app.use(serveStatic(path.join(__dirname, "/client/")));
 console.log(pathJoin);
 
 //Using routes (all routes will start with posts)
 
-app.use('/api', postRoutes);
+app.use("/api", postRoutes);
 
 //MongoDB
 
@@ -34,7 +34,7 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then((db) => console.log('DB is connected!!'))
+  .then((db) => console.log("DB is connected!!"))
   .catch((err) => console.log(err));
 
 //Server
