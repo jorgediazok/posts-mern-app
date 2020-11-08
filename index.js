@@ -7,7 +7,7 @@ const serveStatic = require('serve-static');
 
 require('dotenv').config();
 
-import postRoutes from './routes/posts.js';
+const postRoutes = require('./routes/posts');
 
 const pathJoin = path.join(__dirname, '/client/');
 

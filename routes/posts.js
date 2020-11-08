@@ -9,4 +9,4 @@ router.put('/posts/:id', PostsController.updatePost);
 router.delete('/posts/:id', PostsController.deletePost);
 router.put('/posts/:id/likePost', PostsController.likePost);
 
-export default router;
+module.exports = router;
