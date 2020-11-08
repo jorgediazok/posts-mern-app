@@ -8,8 +8,6 @@ require('dotenv').config();
 
 const postRoutes = require('./routes/posts');
 
-const pathJoin = path.join(__dirname, 'build', '/client/');
-
 //Set app
 const app = express();
 
