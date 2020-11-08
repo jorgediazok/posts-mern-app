@@ -1,5 +1,7 @@
 const mongoose = require('mongoose');
-const PostMessage = require('../models/postMessage');
+
+const path = require('path');
+const PostMessage = require(path.join(__dirname, '../models/postMessage'));
 
 exports.getPosts = async (req, res) => {
   try {
