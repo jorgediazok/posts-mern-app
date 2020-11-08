@@ -19,6 +19,7 @@ app.use(bodyParser.json({ limit: '30mb' }));
 app.use(bodyParser.urlencoded({ limit: '30mb', extended: true }));
 app.use(cors());
 app.use(serveStatic(path.join(__dirname, '/client')));
+console.log(__dirname);
 
 //Using routes (all routes will start with posts)
 
