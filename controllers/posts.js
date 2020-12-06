@@ -1,10 +1,7 @@
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const { ErrorHandler } = require('../utils/ErrorHandler');
+const path = require('path');
 require('dotenv').config();
 
-const path = require('path');
 const PostMessage = require(path.join(__dirname, '../models/postMessage'));
 
 exports.getPosts = async (req, res) => {
