@@ -11,7 +11,7 @@ import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
 
 function App() {
-  const [isLogged, setIsLogged] = useState(false);
+  const [isLogged, setIsLogged] = useState(true);
 
   return (
     <React.Fragment>
