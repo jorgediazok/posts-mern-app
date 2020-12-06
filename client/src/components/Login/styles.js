@@ -59,7 +59,7 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
   },
   formTitle: {
-    fontSize: '1rem',
+    fontSize: '1.4rem',
     textAlign: 'start',
     width: '80%',
     marginBottom: '1rem',

@@ -2,6 +2,7 @@
 import React from 'react';
 import useForm from './useForm';
 import validateInfo from './validateInfo';
+import { Link } from 'react-router-dom';
 import useStyles from './styles';
 
 const LoginSignUp = ({ submitForm }) => {
@@ -17,8 +18,7 @@ const LoginSignUp = ({ submitForm }) => {
     <div className={classes.contentRight}>
       <form className={classes.form} onSubmit={handleSubmit}>
         <h1 className={classes.formTitle}>
-          Get Started with us today! Create your account by filling out the
-          information below.
+          Get Started with us today! Share your moments with your friends.
         </h1>
         <div className={classes.formInputs}>
           <label htmlFor="username" className={classes.formLabel}>
@@ -92,11 +92,11 @@ const LoginSignUp = ({ submitForm }) => {
           Login
         </button>
         <span className={classes.formInputLogin}>
-          Do not have an account? SignUp{''}
-          <a href="/" className={classes.formInputLoginLink}>
+          Do not have an account? Sign Up{''}
+          <Link to="/signup" className={classes.formInputLoginLink}>
             {' '}
-            here
-          </a>
+            HERE
+          </Link>
         </span>
       </form>
     </div>
