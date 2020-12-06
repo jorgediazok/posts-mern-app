@@ -92,8 +92,9 @@ const LoginSignUp = ({ submitForm }) => {
           Sign Up
         </button>
         <span className={classes.formInputLogin}>
-          Already have an account? Login
+          Already have an account? Login{''}
           <a href="/" className={classes.formInputLoginLink}>
+            {' '}
             here
           </a>
         </span>

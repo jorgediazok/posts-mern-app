@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import LoginSignUp from './LoginSignUp';
 import LoginSuccess from './LoginSuccess';
+// @ts-ignore
+import Image from '../../images/memories.png';
 import useStyles from './styles';
 
 const Login = () => {
@@ -18,11 +20,8 @@ const Login = () => {
       <div className={classes.formContainer}>
         <span className={classes.closeBtn}></span>
         <div className={classes.contentLeft}>
-          <img
-            src="images/img-2.svg"
-            alt="spaceship"
-            className={classes.formImg}
-          />
+          <h1 className={classes.formHeading}>MOMENTS</h1>
+          <img src={Image} alt="spaceship" className={classes.formImg} />
         </div>
         {!isSubmitted ? (
           <LoginSignUp submitForm={submitForm} />
