@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import LoginSignUp from './LoginSignUp';
-import LoginSuccess from './LoginSuccess';
+import LoginSignUp from '../components/Login/LoginSignUp';
+import LoginSuccess from '../components/Login/LoginSuccess';
 // @ts-ignore
-import Image from '../../images/memories.png';
-import useStyles from './styles';
+import Image from '../images/memories.png';
+import useStyles from '../components/Login/styles';
 
-const Login = () => {
+const SignUp = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   //Styles
@@ -21,7 +21,7 @@ const Login = () => {
         <span className={classes.closeBtn}></span>
         <div className={classes.contentLeft}>
           <h1 className={classes.formHeading}>MOMENTS</h1>
-          <img src={Image} alt="spaceship" className={classes.formImg} />
+          <img src={Image} alt="logo" className={classes.formImg} />
         </div>
         {!isSubmitted ? (
           <LoginSignUp submitForm={submitForm} />
@@ -33,4 +33,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
