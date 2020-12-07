@@ -9,6 +9,7 @@ import {
 import Home from './Pages/Home';
 import SignUp from './Pages/SignUp';
 import Login from './Pages/Login';
+//This is a comment
 
 function App() {
   const [isLogged, setIsLogged] = useState(true);
