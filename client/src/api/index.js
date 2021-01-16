@@ -1,15 +1,28 @@
 import axios from 'axios';
 require('dotenv').config();
 
-const url = process.env.REACT_APP_APIURL + '/posts';
-const url2 = process.env.REACT_APP_APIURL + '/user';
+const API = axios.create({
+  baseURL: process.env.REACT_APP_APIURL,
+});
 
-export const fetchPosts = () => axios.get(url);
-export const createPost = (newPost) => axios.post(url, newPost);
+API.interceptors.request.use((req) => {
+  if (localStorage.getItem('profile')) {
+    req.headers.Authorization = `Bearer ${
+      JSON.parse(localStorage.getItem('profile')).token
+    }`;
+  }
+  return req;
+});
+
+//const url = process.env.REACT_APP_APIURL + '/posts';
+//const url2 = process.env.REACT_APP_APIURL + '/user';
+
+export const fetchPosts = () => API.get('/posts');
+export const createPost = (newPost) => API.post('/posts', newPost);
+export const likePost = (id) => axios.put(`/posts/${id}/likePost`);
 export const updatePost = (id, updatedPost) =>
-  axios.put(`${url}/${id}`, updatedPost);
-export const deletePost = (id) => axios.delete(`${url}/${id}`);
-export const likePost = (id) => axios.put(`${url}/${id}/likePost`);
+  API.put(`/posts/${id}`, updatedPost);
+export const deletePost = (id) => axios.delete(`/posts/${id}`);
 
-export const signIn = (formData) => axios.post(`${url2}/signin`, formData);
-export const signUp = (formData) => axios.post(`${url2}/signup`, formData);
+export const signIn = (formData) => API.post(`/user/signin`, formData);
+export const signUp = (formData) => API.post(`/user/signup`, formData);
