@@ -9,6 +9,7 @@ import {
 } from '@material-ui/core';
 import { GoogleLogin } from 'react-google-login';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Icon from './icon';
 import Input from './Input';
@@ -20,6 +21,7 @@ const Auth = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isSignUp, setIsSignUp] = useState(false);
   const dispatch = useDispatch();
+  const history = useHistory('/');
 
   const key = process.env.REACT_APP_GOOGLE_KEY;
 
@@ -39,6 +41,7 @@ const Auth = () => {
         type: 'AUTH',
         data: { result, token },
       });
+      history.push('/');
     } catch (error) {
       console.log(error);
     }
