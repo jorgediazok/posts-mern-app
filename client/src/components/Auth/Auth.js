@@ -153,7 +153,7 @@ const Auth = () => {
             cookiePolicy="single_host_origin"
           />
           <Grid container justify="flex-end">
-            <Grid item>
+            <Grid item style={{ margin: '0 auto' }}>
               <Button onClick={switchMode} className={classes.signupButton}>
                 {isSignUp
                   ? 'Already have an account? Sign In'

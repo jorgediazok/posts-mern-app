@@ -30,5 +30,6 @@ export default makeStyles((theme) => ({
   },
   signupButton: {
     fontSize: '12px',
+    textAlign: 'center',
   },
 }));
