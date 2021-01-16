@@ -7,7 +7,7 @@ const path = require('path');
 require('dotenv').config();
 
 const postRoutes = require('./routes/posts');
-const loginRoutes = require('./routes/login');
+const userRoutes = require('./routes/users');
 
 //Set app
 const app = express();
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 //Using routes (all routes will start with posts)
 
 app.use('/api', postRoutes);
-app.use('/api', loginRoutes);
+app.use('/api', userRoutes);
 
 //MongoDB
 
