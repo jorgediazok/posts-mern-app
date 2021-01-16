@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 const PostsController = require('../controllers/posts');
-import auth from '../middleware/auth';
+const auth = require('../middleware/auth');
 
 router.get('/posts', PostsController.getPosts);
 router.post('/posts', auth, PostsController.createPost);
