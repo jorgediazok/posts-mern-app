@@ -14,9 +14,6 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-//const url = process.env.REACT_APP_APIURL + '/posts';
-//const url2 = process.env.REACT_APP_APIURL + '/user';
-
 export const fetchPosts = () => API.get('/posts');
 export const createPost = (newPost) => API.post('/posts', newPost);
 export const likePost = (id) => API.put(`/posts/${id}/likePost`);
