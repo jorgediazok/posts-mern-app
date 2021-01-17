@@ -1,5 +1,7 @@
 const jwt = require('jsonwebtoken');
 
+const secret = 'test';
+
 const auth = async (req, res, next) => {
   try {
     const token = req.headers.authorization.split(' ')[1];
@@ -7,7 +9,7 @@ const auth = async (req, res, next) => {
     let decodedData;
     //Check if our token or from google
     if (token && isCustonAuth) {
-      decodedData = jwt.verify(token, process.env.JWT_SECRET);
+      decodedData = jwt.verify(token, secret);
       req.userId = decodedData?.id;
     } else {
       decodedData = jwt.decode(token);
