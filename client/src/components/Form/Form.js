@@ -60,7 +60,7 @@ function Form({ currentId, setCurrentId }) {
     return (
       <Paper className={classes.paper}>
         <Typography variant="h6" align="center">
-          Please Sign In to create your own memories and like other's memories
+          Please Login to create your own memories and like other's memories
         </Typography>
       </Paper>
     );
@@ -109,6 +109,7 @@ function Form({ currentId, setCurrentId }) {
         <div className={classes.fileInput}>
           <FileBase
             type="file"
+            id="files"
             multiple={false}
             onDone={({ base64 }) =>
               setPostData({ ...postData, selectedFile: base64 })

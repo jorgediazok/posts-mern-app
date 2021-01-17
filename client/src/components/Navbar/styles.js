@@ -10,51 +10,50 @@ export default makeStyles((theme) => ({
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '10px 50px',
-    [theme.breakpoints.down('sm')]: {
-      padding: '5px 30px',
+    [theme.breakpoints.down('xs')]: {
+      padding: '5px 20px',
+      display: 'flex',
+      justifyContent: 'space-evenly',
     },
+  },
+  login: {
+    marginRight: '-28px',
   },
   heading: {
     color: '#115293',
     textDecoration: 'none',
     [theme.breakpoints.down('xs')]: {
-      fontSize: '20px',
-      marginLeft: '-20px',
+      fontSize: '26px',
+      marginLeft: '15px',
     },
   },
   image: {
     marginLeft: '15px',
     [theme.breakpoints.down('xs')]: {
-      height: '30px',
+      height: '40px',
       marginLeft: '5px',
     },
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'flex-end',
-    width: '400px',
+    width: '200px',
     [theme.breakpoints.down('xs')]: {
-      maxWidth: '180px',
+      maxWidth: '130px',
+      marginRight: '65px',
     },
   },
   profile: {
     display: 'flex',
     justifyContent: 'space-between',
     width: '400px',
-    [theme.breakpoints.down('xs')]: {
-      flexWrap: 'wrap',
-    },
-  },
-  userName: {
-    display: 'flex',
-    alignItems: 'center',
-    [theme.breakpoints.down('xs')]: {
-      fontSize: '14px',
-    },
   },
   brandContainer: {
     display: 'flex',
     alignItems: 'center',
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: '65px',
+    },
   },
   purple: {
     color: theme.palette.getContrastText(deepPurple[500]),
@@ -62,12 +61,13 @@ export default makeStyles((theme) => ({
     [theme.breakpoints.down('xs')]: {
       height: '30px',
       width: '30px',
+      marginRight: '10px',
+      marginTop: '4px',
     },
   },
   logout: {
     [theme.breakpoints.down('xs')]: {
-      fontSize: '10px',
-      maxWidth: '20px',
+      fontSize: '12px',
     },
   },
 }));
