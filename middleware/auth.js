@@ -7,7 +7,7 @@ const auth = async (req, res, next) => {
     let decodedData;
     //Check if our token or from google
     if (token && isCustonAuth) {
-      decodedData = jwt.verify(token, 'test');
+      decodedData = jwt.verify(token, process.env.JWT_SECRET);
       req.userId = decodedData?.id;
     } else {
       decodedData = jwt.decode(token);
