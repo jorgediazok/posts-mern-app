@@ -17,7 +17,7 @@ function Posts({ setCurrentId }) {
       container
       alignItems="stretch"
       spacing={3}>
-      {posts.reverse().map((post) => (
+      {posts.map((post) => (
         <Grid key={post._id} item xs={12} sm={6}>
           <Post post={post} setCurrentId={setCurrentId} />
         </Grid>
