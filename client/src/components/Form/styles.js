@@ -16,7 +16,7 @@ export default makeStyles((theme) => ({
   },
   fileInput: {
     width: '97%',
-    margin: '18px 0',
+    margin: '15px 0',
     color: 'transparent',
   },
   buttonSubmit: {

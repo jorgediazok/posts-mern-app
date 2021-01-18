@@ -17,7 +17,7 @@ export default makeStyles((theme) => ({
     },
   },
   login: {
-    marginRight: '-28px',
+    marginRight: '-10px',
   },
   heading: {
     color: '#115293',
