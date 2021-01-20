@@ -11,12 +11,16 @@ function Posts({ setCurrentId }) {
   const classes = useStyles();
 
   const filteredPosts = useMemo(() => {
+    if (!posts || !posts.length) return null;
+
     const filtered = posts.sort(
       (a, b) => new Date(b.createdAt) - new Date(a.createdAt)
     );
-    console.log(filtered);
+    console.log(posts);
     return filtered;
   }, [posts]);
+
+  console.log(posts);
 
   console.log(filteredPosts);
 
