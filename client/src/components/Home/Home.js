@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from 'react';
-import { Container, Grow, Grid, Paper } from '@material-ui/core';
+import {
+  Container,
+  Grow,
+  Grid,
+  Paper,
+  AppBar,
+  TextField,
+  Button,
+} from '@material-ui/core';
 import { useDispatch } from 'react-redux';
+import { useHistory, useLocation } from 'react-router-dom';
+import ChipInput from 'material-ui-chip-input';
 import { getPosts } from '../../actions/posts';
 import Pagination from '../Pagination';
 import useStyles from './styles';
