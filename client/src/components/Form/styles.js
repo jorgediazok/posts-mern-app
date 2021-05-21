@@ -16,11 +16,9 @@ export default makeStyles((theme) => ({
   },
   fileInput: {
     width: '97%',
-    margin: '15px 0',
-    color: 'transparent',
+    margin: '10px 0',
   },
   buttonSubmit: {
     marginBottom: 10,
-    backgroundColor: '#330055',
   },
 }));

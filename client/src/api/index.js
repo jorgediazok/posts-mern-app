@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 require('dotenv').config();
 
 const API = axios.create({
@@ -14,7 +15,8 @@ API.interceptors.request.use((req) => {
   return req;
 });
 
-export const fetchPosts = () => API.get('/posts');
+export const fetchPost = (id) => API.get(`/posts/${id}`);
+export const fetchPosts = (page) => API.get(`/posts?page=${page}`);
 export const fetchPostsBySearch = (searchQuery) =>
   API.get(
     `/posts/search?searchQuery=${searchQuery.search || 'none'}&tags=${

@@ -4,11 +4,13 @@ const router = express.Router();
 const PostsController = require('../controllers/posts');
 const auth = require('../middleware/auth');
 
-router.get('/posts', PostsController.getPosts);
-router.get('/posts/search', PostsController.getPostsBySearch);
-router.post('/posts', auth, PostsController.createPost);
-router.put('/posts/:id', auth, PostsController.updatePost);
-router.delete('/posts/:id', auth, PostsController.deletePost);
-router.put('/posts/:id/likePost', auth, PostsController.likePost);
+router.get('/search', PostsController.getPostsBySearch);
+router.get('/', PostsController.getPosts);
+router.get('/:id', PostsController.getPost);
+
+router.post('/', auth, PostsController.createPost);
+router.put('/:id', auth, PostsController.updatePost);
+router.delete('/:id', auth, PostsController.deletePost);
+router.put('/:id/likePost', auth, PostsController.likePost);
 
 module.exports = router;

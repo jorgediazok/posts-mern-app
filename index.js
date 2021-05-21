@@ -24,8 +24,8 @@ app.get('/', (req, res) => {
 
 //Using routes (all routes will start with posts)
 
-app.use('/api', postRoutes);
-app.use('/api', userRoutes);
+app.use('/posts', postRoutes);
+app.use('/user', userRoutes);
 
 //MongoDB
 
@@ -35,10 +35,10 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then((db) => console.log('DB is connected!!'))
+  .then(() => console.log('DB is connected!!'))
   .catch((err) => console.log(err));
 
 //Server
 
 const PORT = process.env.PORT || 5000;
-app.listen(PORT);
+app.listen(PORT, () => console.log(`Server running on Port ${PORT}`));
