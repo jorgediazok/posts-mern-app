@@ -68,11 +68,11 @@ const Post = () => {
           </Typography>
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1">
-            <strong>Realtime Chat - coming soon!</strong>
+            <strong>This info is to be completed</strong>
           </Typography>
           <Divider style={{ margin: '20px 0' }} />
           <Typography variant="body1">
-            <strong>Comments - coming soon!</strong>
+            <strong>Comments - This is to be completed</strong>
           </Typography>
           <Divider style={{ margin: '20px 0' }} />
         </div>

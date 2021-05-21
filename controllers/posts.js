@@ -1,12 +1,13 @@
 const mongoose = require('mongoose');
+const express = require('express');
 const path = require('path');
 const router = express.Router();
 
 require('dotenv').config();
 
-const PostMessage = require('../models/postMessage');
+// const PostMessage = require('../models/postMessage');
 
-// const PostMessage = require(path.join(__dirname, '../models/postMessage'));
+const PostMessage = require(path.join(__dirname, '../models/postMessage'));
 
 exports.getPosts = async (req, res) => {
   const { page } = req.query;
