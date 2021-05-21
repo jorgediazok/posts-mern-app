@@ -18,10 +18,6 @@ function Posts({ setCurrentId }) {
     return filtered;
   }, [posts]);
 
-  console.log(posts);
-
-  console.log(filteredPosts);
-
   return !posts.length ? (
     <CircularProgress />
   ) : (

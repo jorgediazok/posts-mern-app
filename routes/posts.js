@@ -5,6 +5,7 @@ const PostsController = require('../controllers/posts');
 const auth = require('../middleware/auth');
 
 router.get('/posts', PostsController.getPosts);
+router.get('/posts/search', PostsController.getPostsBySearch);
 router.post('/posts', auth, PostsController.createPost);
 router.put('/posts/:id', auth, PostsController.updatePost);
 router.delete('/posts/:id', auth, PostsController.deletePost);
