@@ -21,6 +21,7 @@ const Post = () => {
 
   useEffect(() => {
     dispatch(getPost(id));
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const Post = () => {
         getPostsBySearch({ search: 'none', tags: post?.tags.join(',') })
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [post]);
 
   if (!post) return null;
